@@ -19,7 +19,10 @@ function countCats(matrix) {
   const catEars = '^^';
   let catCounter = 0;
 
+  // iterate each row in matrix
   for (let row of matrix) {
+
+    // iterate each element in row
     for (let element of row) {
       if (element === catEars) {
         catCounter += 1;
