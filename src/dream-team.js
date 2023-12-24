@@ -12,17 +12,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Matt', 'Ann', 'Dmitry', 'Max']) => 'ADMM'
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
- */
+*/
+
 function createDreamTeam(members) {
+  // if "members" is not an array
   if (!Array.isArray(members)) {
     return false;
   }
 
   let secretName = '';
 
+  // iterate each member in members
   for (let member of members) {
+    
+    // check if member is string
     if (typeof member === 'string') {
-      // trim any top or end whitespaces in the name
+      
+      // only if it is string -> trim any top or end whitespaces in the name
       member = member.trim();
 
       // add first letter of name to the secretName in uppercase
