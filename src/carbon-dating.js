@@ -37,7 +37,7 @@ function dateSample(sampleActivity) {
   // value of the decay constant
   const k = LOGARITHM_OF_TWO / HALF_LIFE_PERIOD;
   
-  const ages = Math.ceil(Math.log(MODERN_ACTIVITY / currentActivity) / (0.693 / HALF_LIFE_PERIOD));
+  const ages = Math.ceil(Math.log(MODERN_ACTIVITY / currentActivity) / k);
 
   return ages;
 }
