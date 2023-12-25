@@ -18,22 +18,22 @@ const { NotImplementedError } = require('../extensions/index.js');
 
 function repeater(str, options) {
   // number of repetitions of the str
-  let repeatTimes = options.repeatTimes || 1;
+  const repeatTimes = options.repeatTimes || 1;
 
   // string separating repetitions of the str
-  let separator = options.separator || '+';
+  const separator = options.separator || '+';
 
   // additional string that will be added to each repetition of the str
-  let addition = (options.addition !== undefined) ? String(options.addition) : '';
+  const addition = (options.addition !== undefined) ? String(options.addition) : '';
 
   // number of repetitions of the addition
-  let additionRepeatTimes = options.additionRepeatTimes || 1;
+  const additionRepeatTimes = options.additionRepeatTimes || 1;
 
   // string separating repetitions of the addition
-  let additionSeparator = options.additionSeparator || '|';
+  const additionSeparator = options.additionSeparator || '|';
 
-  let repeatedAddition = (addition + additionSeparator).repeat(additionRepeatTimes - 1) + addition;
-  let repeatedStr = (str + repeatedAddition + separator).repeat(repeatTimes - 1) + str + repeatedAddition;
+  const repeatedAddition = (addition + additionSeparator).repeat(additionRepeatTimes - 1) + addition;
+  const repeatedStr = (str + repeatedAddition + separator).repeat(repeatTimes - 1) + str + repeatedAddition;
 
   return repeatedStr;
 }
