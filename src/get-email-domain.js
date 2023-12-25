@@ -12,13 +12,19 @@ const { NotImplementedError } = require('../extensions/index.js');
 */
 
 function getEmailDomain(email) {
-  // split the email address string into an array
-  const emailArray = email.split('@');
+  // check that the incoming data is an email
+  if (typeof email === 'string' && email.includes('@')) {
+    
+    // split the email address string into an array
+    const emailArray = email.split('@');
 
-  // get the last element of the array, which will be the domain
-  const domain = emailArray[emailArray.length - 1];
+    // get the last element of the array, which will be the domain
+    const domain = emailArray[emailArray.length - 1];
+
+    return domain;
+  }
   
-  return domain;
+  return false;
 }
 
 module.exports = {
